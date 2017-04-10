@@ -1,6 +1,9 @@
 # Own
 .idea
 .idea/
+**/bundle.js
+**/main.min.js
+**/main.min.css
 
 
 # Created by https://www.gitignore.io/api/phpstorm

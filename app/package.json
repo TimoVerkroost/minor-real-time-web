@@ -1,0 +1,53 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "private": true,
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimoVerkroost/minor-real-time-web.git"
+  },
+  "author": "Timo Verkroost <timo.verkroost@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TimoVerkroost/minor-real-time-web/issues"
+  },
+  "homepage": "https://github.com/TimoVerkroost/minor-real-time-web#readme",
+  "description": "",
+  "scripts": {
+    "start": "node ./bin/www",
+    "expose": "ngrok http 3000",
+    "build-bundle": "browserify public/javascripts/main.js > public/javascripts/bundle.js",
+    "build-mangle": "esmangle public/javascripts/bundle.js > public/javascripts/main.min.js",
+    "build-css": "uglifycss public/stylesheets/main.css > public/stylesheets/main.min.css",
+    "build": "npm run build-bundle && npm run build-mangle && npm run build-css",
+    "lint-css": "stylelint public/stylesheets/main.css",
+    "lint-js": "xo public/javascripts/main.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "compression": "^1.6.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.1",
+    "hbs": "~4.0.1",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "esmangle": "^1.0.1",
+    "ngrok": "^2.2.6",
+    "stylelint": "^7.7.1",
+    "stylelint-config-standard": "^16.0.0",
+    "uglifycss": "0.0.25",
+    "xo": "^0.18.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
+  "xo": {
+    "space": true,
+    "esnext": false
+  }
+}
