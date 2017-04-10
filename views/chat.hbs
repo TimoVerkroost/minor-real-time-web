@@ -1,28 +1,9 @@
-<ul id="messages"></ul>
-<form id="chatBox" action="">
-  <input id="m" autocomplete="off" /><button>Send</button>
-</form>
+<main>
+  <ul id="messages"></ul>
+  <form id="chatBox" action="">
+    <input id="m" autocomplete="off" autofocus placeholder="Your message..." /><button>Send</button>
+  </form>
+</main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-<script>
-  (function () {
-    var socket = io();
-    document.getElementById("chatBox").addEventListener("submit", function(event){
-      var messageBox = document.getElementById("m");
-      socket.emit('chat message', messageBox.value);
-      messageBox.value = "";
-      event.preventDefault();
-      return false;
-    });
-    socket.on('chat message', function(msg, id){
-      // Check if user is current user or other
-      var status;
-      if (socket.id === id) {
-        status = "current";
-      } else {
-        status = "other";
-      }
-      document.getElementById("messages").innerHTML += "<li class="+ status +"><span>" + msg + "</span></li>";
-    });
-  })();
-</script>
+<script src="javascripts/main.js"></script>
