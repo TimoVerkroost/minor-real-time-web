@@ -14,13 +14,19 @@ html {
 }
 
 main {
-  background-color: rgb(244, 244, 244);
+  background-color: #f4f4f4;
   margin: 0 auto;
   max-width: 25em;
+}
+
+#chatContainer {
+  background-color: #f4f4f4;
   position: relative;
   min-height: 100vh;
   max-height: 100vh;
   overflow: scroll;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 form {
