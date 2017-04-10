@@ -23,7 +23,7 @@
     "build-css": "uglifycss public/stylesheets/main.css > public/stylesheets/main.min.css",
     "build": "npm run build-bundle && npm run build-mangle && npm run build-css",
     "lint-css": "stylelint public/stylesheets/main.css",
-    "lint-js": "xo public/javascripts/main.js"
+    "lint-js": "xo public/javascripts/main.js --env=browser"
   },
   "dependencies": {
     "body-parser": "~1.16.0",

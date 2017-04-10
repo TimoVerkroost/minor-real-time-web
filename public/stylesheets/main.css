@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body,
 html {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
@@ -15,7 +16,7 @@ html {
 main {
   background-color: rgb(244, 244, 244);
   margin: 0 auto;
-  max-width:25em;
+  max-width: 25em;
   position: relative;
 }
 
@@ -24,14 +25,15 @@ form {
   position: fixed;
   bottom: 0;
   width: 100%;
-  max-width:25em;
+  max-width: 25em;
   padding: 0;
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 }
+
 form input {
   border: none;
-  border-bottom: .1em solid rgba(236, 240, 241,1);
-  margin: .8em 2.5%;
+  border-bottom: 0.1em solid rgba(236, 240, 241, 1);
+  margin: 0.8em 2.5%;
   padding: 0;
   width: 70%;
   vertical-align: top;
@@ -44,16 +46,15 @@ form input {
 }
 
 form input:focus {
-  border-bottom: .1em solid rgba(236, 240, 241,0.25);
+  border-bottom: 0.1em solid rgba(236, 240, 241, 0.25);
 }
 
 form button {
   width: 25%;
-  border: 0;
-  background: rgba(39, 174, 96,1.0);
+  background: rgba(39, 174, 96, 1);
   color: #d8d8d8;
   border: none;
-  padding: .8em;
+  padding: 0.8em;
   font-size: 1em;
   font-weight: 700;
   vertical-align: top;
@@ -64,19 +65,20 @@ form button {
 
 form button:hover,
 form button:focus {
-  background: rgba(46, 204, 113,1.0);
+  background: rgba(46, 204, 113, 1);
   outline: none;
 }
 
 #messages {
   list-style-type: none;
   margin: 0;
-  padding: 0 0 4em 0;
+  padding: 0 0 4em;
   font-size: 1em;
   min-height: 100vh;
   max-height: 100vh;
   overflow: scroll;
 }
+
 #messages li {
   padding: 1em 1em 0;
   background: transparent;
@@ -84,7 +86,7 @@ form button:focus {
 
 #messages li > span {
   display: inline-block;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   color: #28292d;
   max-width: 80%;
 }
@@ -93,15 +95,24 @@ form button:focus {
   text-align: left;
 }
 
+#messages li:last-child.other {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
 #messages li.other::after {
   content: "Anonymous";
   display: block;
-  padding: .1em 0 0;
-  font-size: .7em;
+  padding: 0.1em 0 0;
+  font-size: 0.7em;
 }
 
 #messages li.other.default::after {
-  content: "Welcome";
+  content: "Admin";
 }
 
 #messages li.other > span {
@@ -112,11 +123,20 @@ form button:focus {
   text-align: right;
 }
 
+#messages li:last-child.current {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
 #messages li.current::after {
   content: "You";
   display: block;
-  padding: .1em 0 0;
-  font-size: .7em;
+  padding: 0.1em 0 0;
+  font-size: 0.7em;
 }
 
 #messages li.current > span {
@@ -127,10 +147,66 @@ form button:focus {
   content: "Min. 3 characters";
   position: absolute;
   display: inline-block;
-  background-color: rgba(231, 76, 60,1.0);
+  background-color: rgba(231, 76, 60, 1);
   color: #d8d8d8;
-  padding: .5em 1em;
-  font-size: .8em;
+  padding: 0.5em 1em;
+  font-size: 0.8em;
   bottom: 100%;
   left: 0;
+}
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
