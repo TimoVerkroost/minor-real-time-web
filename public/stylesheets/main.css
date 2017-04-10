@@ -100,6 +100,10 @@ form button:focus {
   font-size: .7em;
 }
 
+#messages li.other.default::after {
+  content: "Welcome";
+}
+
 #messages li.other > span {
   background-color: rgb(236, 235, 228);
 }
