@@ -20,7 +20,7 @@ sockIO.on('connection', function(socket){
     console.log('user disconnected');
   });
   socket.on('chat message', function(msg){
-    sockIO.emit('chat message', msg);
+    sockIO.emit('chat message', msg, this.id);
   });
 });
 
