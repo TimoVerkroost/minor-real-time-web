@@ -54,7 +54,7 @@ form button:focus {
   font-size: 0.7em;
 }
 #messages li {
-  padding: 1.3em;
+  padding: .5em;
   background: transparent;
 }
 

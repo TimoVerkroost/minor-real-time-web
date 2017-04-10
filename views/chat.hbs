@@ -1,27 +1,28 @@
 <ul id="messages"></ul>
-<form action="">
+<form id="chatBox" action="">
   <input id="m" autocomplete="off" /><button>Send</button>
 </form>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
-  $(function () {
+  (function () {
     var socket = io();
-    $('form').submit(function(){
-      socket.emit('chat message', $('#m').val());
-      $('#m').val('');
+    document.getElementById("chatBox").addEventListener("submit", function(event){
+      var messageBox = document.getElementById("m");
+      socket.emit('chat message', messageBox.value);
+      messageBox.value = "";
+      event.preventDefault();
       return false;
     });
     socket.on('chat message', function(msg, id){
       // Check if user is current user or other
       var status;
       if (socket.id === id) {
-        status = " current";
+        status = "current";
       } else {
-        status = " other";
+        status = "other";
       }
-      $('#messages').append($('<li class="' + status + '">').append($('<span>').text(msg)));
+      document.getElementById("messages").innerHTML += "<li class="+ status +"><span>" + msg + "</span></li>";
     });
-  });
+  })();
 </script>
