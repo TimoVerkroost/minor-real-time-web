@@ -15,10 +15,6 @@ var app = express();
 app.sockIO = sockIO;
 
 sockIO.on('connection', function(socket){
-  console.log('user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
   socket.on('chat message', function(msg){
     sockIO.emit('chat message', msg, this.id);
   });
