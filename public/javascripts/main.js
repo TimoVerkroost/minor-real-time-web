@@ -23,9 +23,10 @@
       status = 'other';
     }
     var messagesContainer = document.getElementById('messages');
+    var chatContainer = document.getElementById('chatContainer');
     messagesContainer.innerHTML += '<li class=" ' + status + '"><span>' + msg + '</span></li>';
     // Jump to last message
     var lastMessage = document.querySelector('#messages li:last-child');
-    messagesContainer.scrollTop = lastMessage.offsetTop;
+    chatContainer.scrollTop = lastMessage.offsetTop;
   });
 })();

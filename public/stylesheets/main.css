@@ -18,6 +18,9 @@ main {
   margin: 0 auto;
   max-width: 25em;
   position: relative;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: scroll;
 }
 
 form {
@@ -74,9 +77,6 @@ form button:focus {
   margin: 0;
   padding: 0 0 4em;
   font-size: 1em;
-  min-height: 100vh;
-  max-height: 100vh;
-  overflow: scroll;
 }
 
 #messages li {
