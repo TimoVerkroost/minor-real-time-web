@@ -17,8 +17,8 @@ app.use(compression());
 app.sockIO = sockIO;
 
 sockIO.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    sockIO.emit('chat message', msg, this.id);
+  socket.on('chat message', function(msg, name){
+    sockIO.emit('chat message', msg, name, this.id);
   });
 });
 
