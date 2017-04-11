@@ -28,5 +28,9 @@
     // Jump to last message
     var lastMessage = document.querySelector('#messages li:last-child');
     chatContainer.scrollTop = lastMessage.offsetTop;
+    if (msg === "Chanel") {
+      var audio = new Audio('../sounds/messageSound.mp3');
+      audio.play();
+    }
   });
 })();
