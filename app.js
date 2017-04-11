@@ -5,10 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sockIO = require('socket.io')();
+var compression = require('compression');
 
 var index = require('./routes/index');
 
 var app = express();
+
+app.use(compression());
 
 // Init socket.io
 app.sockIO = sockIO;
