@@ -48,22 +48,22 @@
     var audioNotification;
     if (socket.id != id) {
       // Notification sounds for receivers
-      if (name === "Chanel") {
+      if (name === 'Chanel') {
         audioNotification = new Audio('../sounds/murloc.mp3');
         audioNotification.play();
-      } else if (name === "Timo") {
+      } else if (name === 'Timo') {
         audioNotification = new Audio('../sounds/goatScream.mp3');
         audioNotification.play();
-      } else if (name === "Colin") {
+      } else if (name === 'Colin') {
         audioNotification = new Audio('../sounds/doh.mp3');
         audioNotification.play();
-      } else if (name === "Shyanta") {
+      } else if (name === 'Shyanta') {
         audioNotification = new Audio('../sounds/yoshi.mp3');
         audioNotification.play();
-      } else if (name === "Elton") {
+      } else if (name === 'Elton') {
         audioNotification = new Audio('../sounds/cookieMonster.mp3');
         audioNotification.play();
-      } else if (name === "Titus") {
+      } else if (name === 'Titus') {
         audioNotification = new Audio('../sounds/penguin.mp3');
         audioNotification.play();
       } else {
