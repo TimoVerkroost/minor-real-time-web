@@ -87,7 +87,7 @@
       if (socket.id !== id) {
         var messagesContainer = document.getElementById('messages');
         var chatContainer = document.getElementById('chatContainer');
-        messagesContainer.innerHTML += '<li class="leaveUser"><span>'+ id +' left the chat.</span></li>';
+        messagesContainer.innerHTML += '<li class="leaveUser"><span>Someone left the chat.</span></li>';
         goToBottomChat();
       }
     });
