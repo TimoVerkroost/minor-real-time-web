@@ -30,25 +30,20 @@
       // Check if user is current user or other
       var status;
       var user;
+      var audioNotification;
       if (socket.id === id) {
         status = 'current';
         user = 'You';
+        // Notification sounds for sender
+        audioNotification = new Audio('../sounds/knob.mp3');
+        audioNotification.play();
       } else {
         status = 'other';
-        if (name){
+        if (name) {
           user = name;
         } else {
-          user = "Anonymous";
+          user = 'Anonymous';
         }
-      }
-      var messagesContainer = document.getElementById('messages');
-      var chatContainer = document.getElementById('chatContainer');
-      messagesContainer.innerHTML += '<li data-name="' + user + '" class=" ' + status + '"><span>' + msg + '</span></li>';
-      // Jump to last message
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-      // Notifications
-      var audioNotification;
-      if (socket.id != id) {
         // Notification sounds for receivers
         if (name === 'Chanel') {
           audioNotification = new Audio('../sounds/murloc.mp3');
@@ -72,11 +67,12 @@
           audioNotification = new Audio('../sounds/capisci.mp3');
           audioNotification.play();
         }
-      } else {
-        // Notification sounds for sender
-        audioNotification = new Audio('../sounds/knob.mp3');
-        audioNotification.play();
       }
+      var messagesContainer = document.getElementById('messages');
+      var chatContainer = document.getElementById('chatContainer');
+      messagesContainer.innerHTML += '<li data-name="' + user + '" class=" ' + status + '"><span>' + msg + '</span></li>';
+      // Jump to last message
+      chatContainer.scrollTop = chatContainer.scrollHeight;
     });
   }
 })();
