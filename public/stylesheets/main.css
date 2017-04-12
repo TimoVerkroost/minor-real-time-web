@@ -32,6 +32,27 @@ main {
   flex-direction: column-reverse;
 }
 
+#chatInfo {
+  position: fixed;
+  top: 0;
+  padding: 0.8em;
+  background-color: #d35400;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  max-width: 25em;
+  box-sizing: border-box;
+}
+
+#chatInfo > span {
+  font-size: 1em;
+  font-weight: 700;
+  display: inline-block;
+  line-height: .5em;
+  padding: 0.5em;
+  background-color: #e67e22;
+}
+
 #chatBox {
   background: #28292d;
   position: fixed;

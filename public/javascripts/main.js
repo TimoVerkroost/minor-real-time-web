@@ -6,6 +6,7 @@
     // Chat box
     var chatBox = document.getElementById('chatBox');
     var nameBox = document.getElementById('name');
+    var connectedCountBox = document.getElementById('connectedUsers');
     chatBox.addEventListener('submit', function (event) {
       var messageBox = document.getElementById('m');
       if (messageBox.value.length >= 3) {
@@ -75,7 +76,8 @@
       messagesContainer.innerHTML += '<li data-name="' + user + '" class=" ' + status + '"><span>' + msg + '</span></li>';
       goToBottomChat();
     });
-    socket.on('connection user', function (id) {
+    socket.on('connection user', function (id, totalConnected) {
+      connectedCountBox.innerHTML = totalConnected;
       if (socket.id !== id) {
         var messagesContainer = document.getElementById('messages');
         var chatContainer = document.getElementById('chatContainer');
@@ -83,7 +85,8 @@
         goToBottomChat();
       }
     });
-    socket.on('disconnect user', function (id) {
+    socket.on('disconnect user', function (id, totalConnected) {
+      connectedCountBox.innerHTML = totalConnected;
       if (socket.id !== id) {
         var messagesContainer = document.getElementById('messages');
         var chatContainer = document.getElementById('chatContainer');
