@@ -1,4 +1,5 @@
 (function () {
+  /* global io */
   // Check if socket is available
   if (io()) {
     var socket = io();
