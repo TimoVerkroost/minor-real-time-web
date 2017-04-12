@@ -12,6 +12,7 @@ Chat app: [Live demo](https://rtw-tv-1337.herokuapp.com/)
 ## Finished features
 * [x] Own chats right, other users chat left.
 * [x] Notification sound.
+  * [x] See also the easter egg section :rabbit:
 * [x] Chats start from bottom and goes up, so the latest message is on the bottom.
 * [x] Auto scroll to bottom when a message is added.
 * [x] Option to use an username.
@@ -61,7 +62,13 @@ npm run watch
 ```
 
 ## Easter eggs
-* When you're the user "Chanel" or "Timo" you get a funny sound when sending a message, and the receivers get also that sound.
+* When you are a specific user.
+  * "Titus"   = Penguin :penguin:
+  * "Elton"   = Cookie monster :cookie:
+  * "Chanel"  = Murloc :frog:
+  * "Colin"   = Homer Simpson "Doh!" :persevere:
+  * "Shyanta" = Yoshi :turtle:
+  * "Timo"    = Goat scream :goat:
 
 ## Licence
 MIT © Timo Verkroost
