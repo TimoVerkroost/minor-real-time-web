@@ -28,8 +28,8 @@
     "build-css": "uglifycss public/stylesheets/main.css > public/stylesheets/main.min.css",
     "build": "npm run build-js && npm run build-css",
     "watch": "npm-watch",
-    "lint-css": "stylelint public/stylesheets/main.css",
-    "lint-js": "xo public/javascripts/main.js --env=browser"
+    "lint-css": "stylelint public/stylesheets/main.css || true",
+    "lint-js": "xo public/javascripts/main.js --env=browser || true"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
