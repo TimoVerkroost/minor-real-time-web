@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "start-update": "nodemon ./bin/www",
+    "start-update": "nodemon ./bin/www --ignore 'public/javascripts/main.min.js' --ignore 'public/javascripts/bundle.js' --ignore 'public/stylesheets/main.min.css'",
     "expose": "ngrok http 3000",
     "build-bundle": "browserify public/javascripts/main.js > public/javascripts/bundle.js",
     "build-mangle": "esmangle public/javascripts/bundle.js > public/javascripts/main.min.js",
