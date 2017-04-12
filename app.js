@@ -17,8 +17,13 @@ app.use(compression());
 app.sockIO = sockIO;
 
 sockIO.on('connection', function (socket) {
+  sockIO.emit('connection user', socket.id);
+
+  socket.on('disconnect', function(){
+    sockIO.emit('disconnect user', socket.id);
+  });
   socket.on('chat message', function (msg, name) {
-    sockIO.emit('chat message', msg, name, this.id);
+    sockIO.emit('chat message', msg, name, socket.id);
   });
 });
 

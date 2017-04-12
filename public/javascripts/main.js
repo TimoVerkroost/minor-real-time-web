@@ -1,9 +1,11 @@
 (function () {
   /* global io */
   // Check if socket is available
-  if (io()) {
+  if (document.getElementById('socketScript')) {
     var socket = io();
     // Chat box
+    socket.emit('connected user');
+
     var chatBox = document.getElementById('chatBox');
     chatBox.addEventListener('submit', function (event) {
       var messageBox = document.getElementById('m');
@@ -23,6 +25,7 @@
     var nameForm = document.getElementById('nameBox');
     nameForm.addEventListener('submit', function (event) {
       var messageBox = document.getElementById('m');
+      nameForm.style.display = "none";
       messageBox.focus();
       event.preventDefault();
       return false;
@@ -72,8 +75,32 @@
       var messagesContainer = document.getElementById('messages');
       var chatContainer = document.getElementById('chatContainer');
       messagesContainer.innerHTML += '<li data-name="' + user + '" class=" ' + status + '"><span>' + msg + '</span></li>';
+      goToBottomChat();
+    });
+
+    socket.on('connection user', function (id) {
+      if (socket.id !== id) {
+        var messagesContainer = document.getElementById('messages');
+        var chatContainer = document.getElementById('chatContainer');
+        messagesContainer.innerHTML += '<li class="newUser"><span>Someone new has enter the chat.</span></li>';
+        goToBottomChat();
+      }
+    });
+
+    socket.on('disconnect user', function (id) {
+      if (socket.id !== id) {
+        var messagesContainer = document.getElementById('messages');
+        var chatContainer = document.getElementById('chatContainer');
+        messagesContainer.innerHTML += '<li class="leaveUser"><span>Someone left the chat.</span></li>';
+        goToBottomChat();
+      }
+    });
+
+    function goToBottomChat() {
+      var messagesContainer = document.getElementById('messages');
+      var chatContainer = document.getElementById('chatContainer');
       // Jump to last message
       chatContainer.scrollTop = chatContainer.scrollHeight;
-    });
+    }
   }
 })();
