@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body,
 html {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
@@ -36,7 +30,7 @@ main {
   flex-direction: column-reverse;
 }
 
-form#chatBox {
+#chatBox {
   background: #28292d;
   position: fixed;
   bottom: 0;
@@ -46,7 +40,7 @@ form#chatBox {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 }
 
-form#nameBox {
+#nameBox {
   background: #3498db;
   position: fixed;
   top: 0;
@@ -75,7 +69,7 @@ form input:focus {
   border-bottom: 0.1em solid rgba(236, 240, 241, 0.25);
 }
 
-form#nameBox > span{
+#nameBox > span {
   width: auto;
   max-width: 25%;
   padding: 0.8em;
@@ -86,16 +80,19 @@ form#nameBox > span{
   color: #d8d8d8;
 }
 
-form#nameBox input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+#nameBox input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #2c3e50;
 }
-form#nameBox input::-moz-placeholder { /* Firefox 19+ */
+
+#nameBox input::-moz-placeholder { /* Firefox 19+ */
   color: #2c3e50;
 }
-form#nameBox input:-ms-input-placeholder { /* IE 10+ */
+
+#nameBox input:-ms-input-placeholder { /* IE 10+ */
   color: #2c3e50;
 }
-form#nameBox input:-moz-placeholder { /* Firefox 18- */
+
+#nameBox input:-moz-placeholder { /* Firefox 18- */
   color: #2c3e50;
 }
 
