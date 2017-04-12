@@ -17,6 +17,8 @@ Chat app: [Live demo](https://rtw-tv-1337.herokuapp.com/)
 * [x] Auto scroll to bottom when a message is added.
 * [x] Option to use an username.
 * [x] Removed jQuery.
+* [x] Add message when user connected to chat room.
+* [x] Show how many users are connected.
 
 ## Wishlist
 * [ ] Multiple chat rooms.
@@ -24,7 +26,6 @@ Chat app: [Live demo](https://rtw-tv-1337.herokuapp.com/)
 * [ ] Login system so only authorized users can use the chat.
 * [ ] Less bugs on mobile devices.
 * [ ] Upload images.
-* [ ] Add message when user connected to chat room.
 
 ## Build / Install and start project
 
