@@ -1,18 +1,31 @@
-# minor-real-time-web
-All assignments for Real Time Web
+# Minor Real-Time web chat app
+Real-Time chat app with websockets.
 
 Chat app: [Live demo](https://rtw-tv-1337.herokuapp.com/)
 
 ## Used packages
 * [x] Socket.io for real-time updates.
-* [x] ExpressJS server.
+* [x] Express server.
 * [x] Compression for gzip.
 * [x] Handlebars for templating.
 
-## Easter eggs
-* When typing "Chanel" or "Timo" you get a funny sound.
+## Finished features
+* [x] Own chats right, other users chat left.
+* [x] Notification sound.
+* [x] Chats start from bottom and goes up, so the latest message is on the bottom.
+* [x] Auto scroll to bottom when a message is added.
+* [x] Option to use an username.
+* [x] Removed jQuery.
 
-## Build / Install and start project 
+## Wishlist
+* [ ] Multiple chat rooms.
+* [ ] Save messages in database, so the user doesn't end up with a clear chat when reloading.
+* [ ] Login system so only authorized users can use the chat.
+* [ ] Less bugs on mobile devices.
+* [ ] Upload images.
+* [ ] Add message when user connected to chat room.
+
+## Build / Install and start project
 
 ### Clone this repo
 
@@ -46,6 +59,9 @@ npm run start-update
 ```
 npm run watch
 ```
+
+## Easter eggs
+* When you're the user "Chanel" or "Timo" you get a funny sound when sending a message, and the receivers get also that sound.
 
 ## Licence
 MIT © Timo Verkroost
