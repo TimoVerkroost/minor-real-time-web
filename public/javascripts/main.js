@@ -44,16 +44,32 @@
     messagesContainer.innerHTML += '<li data-name="' + user + '" class=" ' + status + '"><span>' + msg + '</span></li>';
     // Jump to last message
     chatContainer.scrollTop = chatContainer.scrollHeight;
-    // Custom sounds for users
+    // Notifications
     var audioNotification;
-    if (name === "Chanel") {
-      audioNotification = new Audio('../sounds/murloc.mp3');
-      audioNotification.play();
-    } else if (name === "Timo") {
-      audioNotification = new Audio('../sounds/goatScream.mp3');
-      audioNotification.play();
+    if (socket.id != id) {
+      // Notification sounds for receivers
+      if (name === "Chanel") {
+        audioNotification = new Audio('../sounds/murloc.mp3');
+        audioNotification.play();
+      } else if (name === "Timo") {
+        audioNotification = new Audio('../sounds/goatScream.mp3');
+        audioNotification.play();
+      } else if (name === "Colin") {
+        audioNotification = new Audio('../sounds/doh.mp3');
+        audioNotification.play();
+      } else if (name === "Shyanta") {
+        audioNotification = new Audio('../sounds/yoshi.mp3');
+        audioNotification.play();
+      } else if (name === "Elton") {
+        audioNotification = new Audio('../sounds/cookieMonster.mp3');
+        audioNotification.play();
+      } else {
+        audioNotification = new Audio('../sounds/capisci.mp3');
+        audioNotification.play();
+      }
     } else {
-      audioNotification = new Audio('../sounds/capisci.mp3');
+      // Notification sounds for sender
+      audioNotification = new Audio('../sounds/knob.mp3');
       audioNotification.play();
     }
   });
