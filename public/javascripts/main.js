@@ -44,13 +44,17 @@
     messagesContainer.innerHTML += '<li data-name="' + user + '" class=" ' + status + '"><span>' + msg + '</span></li>';
     // Jump to last message
     chatContainer.scrollTop = chatContainer.scrollHeight;
+    // Custom sounds for users
+    var audioNotification;
     if (name === "Chanel") {
-      var audioChanel = new Audio('../sounds/murloc.mp3');
-      audioChanel.play();
-    }
-    if (name === "Timo") {
-      var audioTimo = new Audio('../sounds/goatScream.mp3');
-      audioTimo.play();
+      audioNotification = new Audio('../sounds/murloc.mp3');
+      audioNotification.play();
+    } else if (name === "Timo") {
+      audioNotification = new Audio('../sounds/goatScream.mp3');
+      audioNotification.play();
+    } else {
+      audioNotification = new Audio('../sounds/capisci.mp3');
+      audioNotification.play();
     }
   });
 })();
