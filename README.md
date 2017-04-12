@@ -62,7 +62,7 @@ npm run watch
 ```
 
 ## Easter eggs
-* When you are a specific user.
+* When you get a message from a specific user sounds.
   * "Titus"   = Penguin :penguin:
   * "Elton"   = Cookie monster :cookie:
   * "Chanel"  = Murloc :frog:
