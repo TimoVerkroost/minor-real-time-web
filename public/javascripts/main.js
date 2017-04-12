@@ -63,6 +63,9 @@
       } else if (name === "Elton") {
         audioNotification = new Audio('../sounds/cookieMonster.mp3');
         audioNotification.play();
+      } else if (name === "Titus") {
+        audioNotification = new Audio('../sounds/penguin.mp3');
+        audioNotification.play();
       } else {
         audioNotification = new Audio('../sounds/capisci.mp3');
         audioNotification.play();
