@@ -1,7 +1,7 @@
 # Minor Real-Time web chat app
 Real-Time chat app with websockets.
 
-Chat app: [Live demo](https://rtw-tv-1337.herokuapp.com/)
+Chat app: [Live demo](https://rtw-socket-chat.herokuapp.com/)
 
 ## Used packages
 * [x] Socket.io for real-time updates.
